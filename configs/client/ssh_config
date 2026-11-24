@@ -1,0 +1,12 @@
+# ~/.ssh/config auf CL01
+Host srv1
+    User student
+    HostName 192.168.10.11
+    IdentityFile ~/.ssh/id_rsa
+    Port 6464
+
+Host srv2
+    User student
+    HostName 192.168.10.13
+    IdentityFile ~/.ssh/id_rsa
+    Port 22

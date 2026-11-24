@@ -1,0 +1,27 @@
+; Forward-Lookup-Zone gfn.internal
+$TTL 2D
+@       IN  SOA srv1.gfn.internal. administrator.gfn.internal. (
+                1       ; Serial
+                8H      ; Refresh
+                2H      ; Retry
+                4W      ; Expire
+                3H )    ; Minimum TTL
+
+@       IN  NS      srv1.gfn.internal.
+        IN  A       192.168.10.11
+@       IN  MX  10  mail
+mail    IN  A       192.168.10.14
+
+router    IN  A     192.168.10.1
+proxmox   IN  A     192.168.10.10
+srv1      IN  A     192.168.10.11
+storage   IN  A     192.168.10.12
+srv2      IN  A     192.168.10.13
+srv3      IN  A     192.168.10.14
+
+; Webdienste auf SRV2 (Apache vhosts)
+lf10b     IN  A     192.168.10.13
+website1  IN  A     192.168.10.13
+website2  IN  A     192.168.10.13
+nextcloud IN  CNAME srv2
+portainer IN  CNAME srv2

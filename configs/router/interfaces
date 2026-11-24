@@ -1,0 +1,15 @@
+# /etc/network/interfaces – Router (Debian)
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The external network interface (WAN, GFN-Netz)
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+# The internal network interface (LAN, Firmennetz)
+allow-hotplug eth1
+iface eth1 inet static
+    address 192.168.10.1/24

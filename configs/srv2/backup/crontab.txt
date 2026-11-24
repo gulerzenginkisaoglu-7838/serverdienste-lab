@@ -1,0 +1,3 @@
+# crontab -e (root) – täglich um 01:00 Uhr, Ausgabe ins Log
+# m h dom mon dow command
+0 1 * * * /usr/local/bin/backup.sh >> /var/log/backup.log 2>&1

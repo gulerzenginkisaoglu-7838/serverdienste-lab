@@ -1,0 +1,11 @@
+zone "gfn.internal" IN {
+    type master;
+    file "/etc/bind/db.gfn.internal";
+    allow-update { none; };
+};
+
+zone "10.168.192.in-addr.arpa" IN {
+    type master;
+    file "/etc/bind/db.10.168.192";
+    allow-update { none; };
+};
